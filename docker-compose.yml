@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:latest
+    container_name: test_postgres_db
+    environment:
+      POSTGRES_USER: test_user
+      POSTGRES_PASSWORD: test_password
+      POSTGRES_DB: test_db
+    ports:
+      - "5432:5432"  # Make sure PostgreSQL is available on port 5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    networks:
+      - test_network
+    restart: always
+
+  adminer:
+    image: adminer:latest
+    container_name: adminer
+    ports:
+      - "8080:8080"  # Adminer will be available on port 8080
+    networks:
+      - test_network
+    restart: always
+
+networks:
+  test_network:
+    driver: bridge

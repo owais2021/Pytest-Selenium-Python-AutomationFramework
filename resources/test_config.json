@@ -1,0 +1,9 @@
+{
+  "base_url": "https://www.amazon.de/",
+  "browser": "chrome",
+  "chrome_driver_path": "drivers/chromedriver.exe",
+  "gecko_driver_path": "drivers/geckodriver.exe",
+  "test_data_file": "resources/test_data.xlsx"
+
+}
+
